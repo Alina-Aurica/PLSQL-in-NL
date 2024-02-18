@@ -1,0 +1,37 @@
+Create the table named Persons that has the following columns, respectively date types: PersonID int LastName varchar(255) FirstName varchar(255) Address varchar(255) City varchar(255) .
+Delete the table named Shippers.
+Delete all customers from the table.
+Add the following customer to the table: 1 User Test .
+Add the following customer to the table: 1 User Test .
+Add to the Customers table the column with the name Email and the data type varchar(255).
+Delete column Email from table Customers.
+Rename column Email with name EmailAddress from table Customers.
+Change the data type of column Email to varchar(100) in table Customers.
+Change the data type of column Email to varchar(100) in table Customers.
+Change the data type of column Email to varchar(100) in table Customers.
+Modify the Customers table so that column ContactName to have the value Alfred, column City to have the value Frankfurt,  for the element that has CustomerID equal to 1.
+Delete all usersmers who have CustomerName equal to Alfreds from the table.
+Check if n_sales is equal 100000 then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') .
+Check if n_sales is equal 100000 then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') , else do: DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable') .
+Check if n_sales is greater than 100000 then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') , else do: DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable') .
+Check if n_sales is greater or equal than 100000 then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') , else do: DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable') .
+Check if n_sales is smaller or equal than 100000 then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') , else do: DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable') .
+Check if n_sales is equal 100000profit is greater than 0n_sales AND profit then DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable') , else do: DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable') .
+For a Lcntr which has value in 1
+ and 20
+, do this: LL:=i*1 .
+For a Lcntr which has value in 1
+ and 15
+, do this: LL:=i*1 .
+Get CustomerName City  for Customers.
+Get all Customers.
+Get all Customers with property/ies: Country equal to Mexico.
+Delete the procedure named UpdateCourse.
+Create or replace a procedure called print_contact with the following parameters: in_customer_id. Inside it, declare the local variables: r_contact contacts%ROWTYPE , and inside the body  assign the variable r_contact the result of get all contacts assign the variable r_contact the result o. If there is an exception then  dbms_output.put_line(SQLERRM) .
+While monthly_value is smaller than 4000, do this: monthly_value_:=_daily_value_*_31 .
+Select table_name. , in case owner  when SYS then The_owner_is_SYS  when SYSy then The_owner_is_tampit . 
+Create or replace trigger display_salary_changes, BEFORE , DELETE INSERT UPDATE  on customers, FOR EACH ROW  when (NEW.ID>0) declare sal_diff number , begin  sal_diff:=:NEW.salary-:OLD.salary dbms_output.put_line('Old_salary:'||:OLD.salary) dbms_output.put_linep«<ÜóU dbms_output.put_line('Salary_difference:'||sal_diff).
+ Check if monthly_value is smaller than 4000c1%notfound then cnumber:=9999 .
+Add the following student_course to the table: name_in cnumber .
+Open c1 and fetch c1 into cnumber and commit. Close c1.
+Create or replace a procedure called UpdateCourse with the following parameters: name_in. Inside it, declare the local variables: Assign the cursor named c1 the result of  get course_number  for courses_tbl customer_id equal to p_, and inside the body . If there is an exception then  raise_application_error .

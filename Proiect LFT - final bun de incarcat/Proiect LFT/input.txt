@@ -1,0 +1,174 @@
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+DROP TABLE Shippers;
+
+DELETE FROM Customers;
+
+INSERT INTO Customers ( ID, FirstName, LastName ) 
+VALUES ( '1', 'User', 'Test' );
+
+INSERT INTO Customers
+VALUES ( '1', 'User', 'Test' );
+
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+ALTER TABLE Customers
+RENAME COLUMN Email TO EmailAddress;
+
+ALTER TABLE Customers
+ALTER COLUMN Email varchar(100);
+
+ALTER TABLE Customers
+MODIFY COLUMN Email varchar(100);
+
+ALTER TABLE Customers
+MODIFY Email varchar(100);
+
+UPDATE Customers
+SET ContactName = 'Alfred', City = 'Frankfurt'
+WHERE CustomerID = 1;
+
+DELETE FROM Users WHERE CustomerName = 'Alfreds';
+
+IF n_sales == 100000 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+END IF; 
+
+IF n_sales == 100000 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable');
+END IF; 
+
+IF n_sales > 100000 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable');
+END IF; 
+
+IF n_sales >= 100000 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable');
+END IF; 
+
+IF n_sales <= 100000 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable');
+END IF; 
+
+IF n_sales == 100000 AND profit > 0 THEN 
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_profitable');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('This_sales_deal_is_not_profitable');
+END IF; 
+
+FOR Lcntr IN 1..20
+LOOP
+   LL:=i*1;
+END LOOP;
+
+FOR Lcntr IN REVERSE 1..15
+LOOP
+   LL:=i*1;
+END LOOP;
+
+SELECT CustomerName, City FROM Customers;
+
+SELECT * FROM Customers;
+
+SELECT * FROM Customers
+WHERE Country = 'Mexico';
+
+SELECT CustomerName FROM Customers
+WHERE CustomerID = 1;
+
+DROP PROCEDURE UpdateCourse;
+
+SELECT *
+  INTO r_contact
+  FROM contacts
+  WHERE customer_id = p_customer_id;
+
+
+CREATE OR REPLACE PROCEDURE print_contact (
+    in_customer_id NUMBER 
+)
+IS
+  r_contact contacts%ROWTYPE;
+BEGIN
+  SELECT *
+  INTO r_contact
+  FROM contacts
+  WHERE customer_id = p_customer_id;
+  dbms_output.put_line(SQLERRM);
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line(SQLERRM);
+END;
+
+WHILE  monthly_value < 4000
+LOOP
+   monthly_value_:=_daily_value_*_31;
+END LOOP;
+
+
+
+SELECT table_name.
+CASE owner
+  WHEN 'SYS' THEN The_owner_is_SYS;
+  WHEN 'SYSy' THEN The_owner_is_tampit;
+  ELSE 'The_owner_is_another_value';
+END
+FROM all_tables;
+
+
+
+CREATE OR REPLACE TRIGGER display_salary_changes
+BEFORE DELETE OR INSERT OR UPDATE ON customers 
+FOR EACH ROW
+WHEN (NEW.ID>0) 
+DECLARE 
+   sal_diff number; 
+BEGIN 
+   sal_diff:=:NEW.salary-:OLD.salary; 
+   dbms_output.put_line('Old_salary:'||:OLD.salary); 
+   dbms_output.put_line('New_salary:'||:NEW.salary); 
+   dbms_output.put_line('Salary_difference:'||sal_diff); 
+END; 
+
+
+CREATE OR REPLACE PROCEDURE UpdateCourse
+   ( name_in varchar2 )
+IS
+   CURSOR c1 IS
+   SELECT course_number
+    FROM courses_tbl
+    WHERE course_name = name_in;;
+BEGIN
+   OPEN c1;
+   FETCH c1 INTO cnumber;
+   IF c1%notfound THEN
+      cnumber:=9999;
+   END IF;
+   INSERT INTO student_courses
+   ( course_name, course_number )
+   VALUES
+   ( name_in, cnumber );
+   COMMIT;
+   CLOSE c1;
+EXCEPTION
+WHEN OTHERS THEN
+   raise_application_error;
+END;
